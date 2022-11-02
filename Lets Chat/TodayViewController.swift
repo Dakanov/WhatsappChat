@@ -10,7 +10,7 @@ import UIKit
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
@@ -35,26 +35,38 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBAction func pastePressed(_ sender: UIButton) {
         let pb: UIPasteboard = UIPasteboard.general
         phoneTextField.text = pb.string
-
+        
     }
     @IBAction func typePressed(_ sender: UIButton) {
         let urlString = "open://"
         let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-        let URL = NSURL(string: urlStringEncoded!)
-        self.extensionContext?.open(URL as! URL)
+        if let url = URL(string: urlStringEncoded ?? urlString) {
+            self.extensionContext?.open(url)
+        }
     }
     @IBAction func clearPressed(_ sender: UIButton) {
         phoneTextField.text = ""
     }
     @IBAction func sendPressed(_ sender: UIButton) {
-            if phoneTextField.text != "" {
-                let number = phoneTextField.text!
-                let number1 = number.replacingOccurrences(of: "+", with: "")
-                let urlString = "whatsapp://send?phone=\(number1)"
-                let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                let URL = NSURL(string: urlStringEncoded!)
-                self.extensionContext?.open(URL as! URL)
+        if phoneTextField.text != "" {
+            let number = phoneTextField.text!.digits
+            let urlString = "whatsapp://send?phone=\(number)"
+            if let url = URL(string: urlString), !url.absoluteString.isEmpty {
+                self.extensionContext?.open(url)
             }
+        }
     }
     
+}
+
+extension String {
+    func isValidEmail() -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: self)
+    }
+    var digits: String {
+        return components(separatedBy: CharacterSet.decimalDigits.inverted)
+            .joined()
+    }
 }

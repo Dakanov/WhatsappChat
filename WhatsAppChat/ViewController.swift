@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  WhatsAppChat
 //
-//  Created by Dakanov Sultan on 21.03.18.
+//  Created by Dakanov Sultan on 21.03.18
 //  Copyright © 2018 Dakanov Sultan. All rights reserved.
 //
 
@@ -18,24 +18,18 @@ class ViewController: UIViewController {
     }
 
     @IBOutlet var textField: UITextField!
-   
     
 
     @IBAction func sendPress(_ sender: UIButton) {
         if textField.text != "" {
             
-            let number = textField.text!
-            let number1 = number.replacingOccurrences(of: "+", with: "")
-            let urlString = "whatsapp://send?phone=\(number1)"
-            let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            let URL = NSURL(string: urlStringEncoded!)
-            if UIApplication.shared.canOpenURL(URL! as URL) {
-                UIApplication.shared.openURL(URL! as URL)
+            let number = textField.text!.digits
+            let urlString = "whatsapp://send?phone=\(number)"
+            if let url = URL(string: urlString), !url.absoluteString.isEmpty {
+                   UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                self.getAlert()
             }
-            else {
-                getAlert()
-            }
-            
         }
     }
 
@@ -46,16 +40,12 @@ class ViewController: UIViewController {
         }
         if textField.text != "" {
             
-            let number = textField.text!
-            let number1 = number.replacingOccurrences(of: "+", with: "")
-            let urlString = "whatsapp://send?phone=\(number1)"
-            let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-            let URL = NSURL(string: urlStringEncoded!)
-            if UIApplication.shared.canOpenURL(URL! as URL) {
-                UIApplication.shared.openURL(URL! as URL)
-            }
-            else {
-                //                getAlert()
+            let number = textField.text!.digits
+            let urlString = "whatsapp://send?phone=\(number)"
+            if let url = URL(string: urlString), !url.absoluteString.isEmpty {
+                   UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                self.getAlert()
             }
         }
         
