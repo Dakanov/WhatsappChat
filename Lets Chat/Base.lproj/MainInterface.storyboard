@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Lets_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iS7-z6-Hjp">
+                                <rect key="frame" x="20" y="12" width="213" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhn-9o-Med">
+                                <rect key="frame" x="245" y="12" width="55" height="30"/>
+                                <color key="backgroundColor" red="0.15766879916191101" green="0.16777098178863525" blue="0.20392698049545288" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4w5-I7-3re"/>
+                                    <constraint firstAttribute="width" constant="55" id="Zf2-bp-jhO"/>
+                                </constraints>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="D6P-FJ-IxG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re4-7Q-rjb">
+                                <rect key="frame" x="20" y="54" width="55" height="30"/>
+                                <color key="backgroundColor" red="0.15766879916191101" green="0.16777098178863525" blue="0.20392698049545288" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="p7W-K6-3sP"/>
+                                </constraints>
+                                <state key="normal" title="Paste">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pastePressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="o5w-so-Xcp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcu-5i-hKQ">
+                                <rect key="frame" x="245" y="54" width="55" height="30"/>
+                                <color key="backgroundColor" red="0.15766879916191101" green="0.16777098178863525" blue="0.20392698049545288" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="yPi-DR-0dv"/>
+                                </constraints>
+                                <state key="normal" title="Type">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="typePressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="L8s-XM-Psy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oIr-CD-rPt">
+                                <rect key="frame" x="132.5" y="54" width="55" height="30"/>
+                                <color key="backgroundColor" red="0.15766879916191101" green="0.16777098178863525" blue="0.20392698049545288" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="YBO-PG-B4s"/>
+                                </constraints>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clearPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="eWO-BX-z1o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oIr-CD-rPt" firstAttribute="centerX" secondItem="ssy-KU-ocm" secondAttribute="centerX" id="2Pw-2d-Jww"/>
+                            <constraint firstItem="xhn-9o-Med" firstAttribute="trailing" secondItem="ssy-KU-ocm" secondAttribute="trailing" constant="-20" id="E1E-ph-KxN"/>
+                            <constraint firstItem="re4-7Q-rjb" firstAttribute="top" secondItem="iS7-z6-Hjp" secondAttribute="bottom" constant="12" id="EWv-08-NXr"/>
+                            <constraint firstItem="wcu-5i-hKQ" firstAttribute="top" secondItem="iS7-z6-Hjp" secondAttribute="bottom" constant="12" id="Kqd-g0-uNr"/>
+                            <constraint firstItem="re4-7Q-rjb" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="LI0-z8-rkZ"/>
+                            <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="wcu-5i-hKQ" secondAttribute="trailing" constant="20" id="VrP-eq-YIZ"/>
+                            <constraint firstItem="iS7-z6-Hjp" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="20" id="Yxi-b7-7aE"/>
+                            <constraint firstItem="xhn-9o-Med" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="12" id="a3F-WM-BXK"/>
+                            <constraint firstItem="iS7-z6-Hjp" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="12" id="jbq-vZ-GMS"/>
+                            <constraint firstItem="xhn-9o-Med" firstAttribute="leading" secondItem="iS7-z6-Hjp" secondAttribute="trailing" constant="12" id="kmB-R3-YG7"/>
+                            <constraint firstItem="oIr-CD-rPt" firstAttribute="top" secondItem="iS7-z6-Hjp" secondAttribute="bottom" constant="12" id="rs7-Ig-gFt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="120"/>
+                    <connections>
+                        <outlet property="phoneTextField" destination="iS7-z6-Hjp" id="ZuV-WM-hC6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

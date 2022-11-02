@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhatsAppChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndR-Y5-4NH">
+                                <rect key="frame" x="62.5" y="266.5" width="250" height="45"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="OyK-vX-2UH"/>
+                                    <constraint firstAttribute="height" constant="45" id="eNi-MY-e5F"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LDs-aa-8ue"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+7" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XhU-7e-nJ2">
+                                <rect key="frame" x="20" y="201.5" width="335" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Cq1-qH-unX"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whatappLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ceV-Sx-Ufs">
+                                <rect key="frame" x="154" y="60" width="66" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="fAN-6l-VK3"/>
+                                    <constraint firstAttribute="width" constant="66" id="vC7-nu-eUY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WhatsApp Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ow0-dV-qp9">
+                                <rect key="frame" x="30" y="145" width="315" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ow0-dV-qp9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="9AZ-Hl-45W"/>
+                            <constraint firstItem="XhU-7e-nJ2" firstAttribute="top" secondItem="ow0-dV-qp9" secondAttribute="bottom" constant="23" id="FkE-Jm-WV6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XhU-7e-nJ2" secondAttribute="trailing" constant="20" id="KFq-FN-gaU"/>
+                            <constraint firstItem="ow0-dV-qp9" firstAttribute="top" secondItem="ceV-Sx-Ufs" secondAttribute="bottom" constant="10" id="UBB-4V-doO"/>
+                            <constraint firstItem="ceV-Sx-Ufs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aYr-qy-v0l"/>
+                            <constraint firstItem="XhU-7e-nJ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aw0-j1-1ha"/>
+                            <constraint firstItem="ndR-Y5-4NH" firstAttribute="top" secondItem="XhU-7e-nJ2" secondAttribute="bottom" constant="30" id="gNf-ix-GC0"/>
+                            <constraint firstItem="ceV-Sx-Ufs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="kTo-0X-KoT"/>
+                            <constraint firstItem="ndR-Y5-4NH" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="uhE-43-Uuz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ow0-dV-qp9" secondAttribute="trailing" constant="30" id="yOM-CW-Ead"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="XhU-7e-nJ2" id="3Oc-UE-buq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="whatappLogo" width="272" height="274"/>
+    </resources>
+</document>
