@@ -11,14 +11,19 @@ import UIKit
 class TabbarVC: UITabBarController {
 
     // MARK: - Navigation
+    var controllers = [UIViewController]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        getVCWithNavBar(vc: ViewController())
+        
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as? ViewController {
+            getVCWithNavBar(vc: viewController)
+        }
+        
     }
     
     func getVCWithNavBar(vc: UIViewController){
-        self.viewControllers?.append(UINavigationController(rootViewController: vc))
-        
+        controllers.append(UINavigationController(rootViewController: vc))
+        self.viewControllers = controllers
     }
     
 

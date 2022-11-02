@@ -21,9 +21,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet var phoneTextField: UITextField!
+    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        phoneTextField.text = ""
+        
         // Perform any setup necessary in order to update the view.
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
@@ -32,11 +32,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         completionHandler(NCUpdateResult.newData)
     }
     
-    @IBAction func pastePressed(_ sender: UIButton) {
-        let pb: UIPasteboard = UIPasteboard.general
-        phoneTextField.text = pb.string
-        
-    }
     @IBAction func typePressed(_ sender: UIButton) {
         let urlString = "open://"
         let urlStringEncoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
@@ -44,16 +39,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.extensionContext?.open(url)
         }
     }
-    @IBAction func clearPressed(_ sender: UIButton) {
-        phoneTextField.text = ""
-    }
+
     @IBAction func sendPressed(_ sender: UIButton) {
-        if phoneTextField.text != "" {
-            let number = phoneTextField.text!.digits
-            let urlString = "whatsapp://send?phone=\(number)"
-            if let url = URL(string: urlString), !url.absoluteString.isEmpty {
-                self.extensionContext?.open(url)
-            }
+        let pb: UIPasteboard = UIPasteboard.general
+        guard let number = pb.string?.digits else { return }
+        let urlString = "whatsapp://send?phone=\(number)"
+        if let url = URL(string: urlString), !url.absoluteString.isEmpty {
+            self.extensionContext?.open(url)
         }
     }
     

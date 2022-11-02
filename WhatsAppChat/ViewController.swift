@@ -54,13 +54,13 @@ class ViewController: UIViewController {
     func backgroundImage() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "whatsappBackground")
-        backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
     func getAlert(){
-        let alert = UIAlertController(title: nil, message: "Увы, у Вас нет Whatsapp", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: nil, message: "Увы, у Вас нет Whatsapp", preferredStyle: .alert)
         // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{ (action:UIAlertAction!) in
+                                      alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{ (action:UIAlertAction!) in
         }))
         // show the alert
         self.present(alert, animated: true, completion: nil)

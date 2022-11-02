@@ -4,8 +4,7 @@
 target 'Lets Chat' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-pod 'Alamofire'
-
+	pod 'Alamofire'
   # Pods for Lets Chat
 
 end
@@ -13,8 +12,7 @@ end
 target 'WhatsAppChat' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-pod 'Alamofire'
-
+	pod 'Alamofire'
   # Pods for WhatsAppChat
 
 end
